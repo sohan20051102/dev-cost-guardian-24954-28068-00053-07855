@@ -32,7 +32,7 @@ const benefits = [
 export const WhyDevyntra = () => {
   return (
     <section className="py-24 relative bg-gradient-hero overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+      <div className="container mx-auto px-6 max-w-7xl">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
@@ -48,7 +48,7 @@ export const WhyDevyntra = () => {
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12">
           {benefits.map((benefit, index) => (
             <Card
               key={index}
