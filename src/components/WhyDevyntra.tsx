@@ -31,8 +31,8 @@ const benefits = [
 
 export const WhyDevyntra = () => {
   return (
-    <section className="py-24 relative bg-gradient-hero overflow-hidden">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <section className="py-24 relative bg-gradient-hero">
+      <div className="container mx-auto px-4 max-w-7xl overflow-x-hidden">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
@@ -48,11 +48,11 @@ export const WhyDevyntra = () => {
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6 mb-12">
           {benefits.map((benefit, index) => (
             <Card
               key={index}
-              className="p-6 bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-glow hover:-translate-y-1 group animate-fade-in"
+              className="p-6 bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-glow md:hover:-translate-y-1 group animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'backwards' }}
             >
               <div className="space-y-4">
@@ -69,9 +69,9 @@ export const WhyDevyntra = () => {
         </div>
 
         {/* Hook for DevOps/SREs */}
-        <div className="text-center max-w-2xl mx-auto">
-          <div className="p-8 rounded-2xl bg-gradient-card border border-primary/20">
-            <p className="text-xl md:text-2xl font-semibold text-foreground">
+        <div className="text-center">
+          <div className="p-6 md:p-8 rounded-2xl bg-gradient-card border border-primary/20">
+            <p className="text-lg md:text-xl lg:text-2xl font-semibold text-foreground">
               "Focus on your code and infrastructure. Devyntra handles tracking, billing, and invoicing automatically."
             </p>
             <p className="text-muted-foreground mt-4">— Built for DevOps & SRE Teams</p>
