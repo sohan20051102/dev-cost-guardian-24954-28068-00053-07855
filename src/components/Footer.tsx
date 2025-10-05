@@ -6,9 +6,23 @@ export const Footer = () => {
   return (
     <footer className="border-t border-border py-12 md:py-12 bg-card/30">
       <div className="container mx-auto px-6 md:px-6">
-        <div className="flex flex-wrap gap-6 md:grid md:grid-cols-4 md:gap-8 mb-8 md:mb-8">
-          {/* Brand */}
-          <div className="space-y-4 md:space-y-4 w-full md:w-auto md:col-span-1">
+        {/* Brand on mobile - full width */}
+        <div className="mb-6 md:hidden">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
+              <Zap className="w-5 h-5 text-white" />
+            </div>
+            <span className="text-lg font-bold">Devyntra</span>
+          </div>
+          <p className="text-sm text-muted-foreground mt-2">
+            Effortless cloud and AI usage tracking for DevOps teams.
+          </p>
+        </div>
+
+        {/* Links - horizontal on mobile, grid on desktop */}
+        <div className="flex gap-8 overflow-x-auto pb-4 mb-8 md:pb-0 md:mb-8 md:grid md:grid-cols-4 md:gap-8">
+          {/* Brand - desktop only */}
+          <div className="hidden md:block space-y-4">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
                 <Zap className="w-5 h-5 text-white" />
@@ -21,7 +35,7 @@ export const Footer = () => {
           </div>
 
           {/* Product */}
-          <div className="space-y-4 md:space-y-4 flex-1 min-w-[150px]">
+          <div className="space-y-3 md:space-y-4 min-w-[140px] flex-shrink-0">
             <h4 className="font-semibold">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
@@ -48,7 +62,7 @@ export const Footer = () => {
           </div>
 
           {/* Company */}
-          <div className="space-y-4 md:space-y-4 flex-1 min-w-[150px]">
+          <div className="space-y-3 md:space-y-4 min-w-[140px] flex-shrink-0">
             <h4 className="font-semibold">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
@@ -75,7 +89,7 @@ export const Footer = () => {
           </div>
 
           {/* Legal */}
-          <div className="space-y-4 md:space-y-4 flex-1 min-w-[150px]">
+          <div className="space-y-3 md:space-y-4 min-w-[140px] flex-shrink-0">
             <h4 className="font-semibold">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>

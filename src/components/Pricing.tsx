@@ -70,11 +70,11 @@ export const Pricing = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="flex md:grid md:grid-cols-3 gap-8 max-w-6xl mx-auto overflow-x-auto overflow-y-hidden pb-4 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0">
+        <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto overflow-x-auto overflow-y-hidden pb-4 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0">
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className={`p-8 bg-gradient-card border-border transition-all duration-300 hover:shadow-elevated hover:-translate-y-2 animate-fade-in min-w-[300px] md:min-w-0 snap-center ${
+              className={`p-6 md:p-8 bg-gradient-card border-border transition-all duration-300 hover:shadow-elevated hover:-translate-y-2 animate-fade-in w-[85%] md:w-auto flex-shrink-0 snap-center ${
                 plan.highlight
                   ? "border-primary shadow-glow scale-105 md:scale-110"
                   : "hover:border-primary/50"
