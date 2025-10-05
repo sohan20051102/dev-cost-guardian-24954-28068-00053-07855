@@ -6,9 +6,9 @@ export const Footer = () => {
   return (
     <footer className="border-t border-border py-12 md:py-12 bg-card/30">
       <div className="container mx-auto px-6 md:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8 mb-8 md:mb-8">
+        <div className="flex flex-wrap gap-6 md:grid md:grid-cols-4 md:gap-8 mb-8 md:mb-8">
           {/* Brand */}
-          <div className="space-y-4 md:space-y-4 col-span-2 md:col-span-1">
+          <div className="space-y-4 md:space-y-4 w-full md:w-auto md:col-span-1">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
                 <Zap className="w-5 h-5 text-white" />
@@ -21,7 +21,7 @@ export const Footer = () => {
           </div>
 
           {/* Product */}
-          <div className="space-y-4 md:space-y-4">
+          <div className="space-y-4 md:space-y-4 flex-1 min-w-[150px]">
             <h4 className="font-semibold">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
@@ -48,7 +48,7 @@ export const Footer = () => {
           </div>
 
           {/* Company */}
-          <div className="space-y-4 md:space-y-4">
+          <div className="space-y-4 md:space-y-4 flex-1 min-w-[150px]">
             <h4 className="font-semibold">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
@@ -75,7 +75,7 @@ export const Footer = () => {
           </div>
 
           {/* Legal */}
-          <div className="space-y-4 md:space-y-4">
+          <div className="space-y-4 md:space-y-4 flex-1 min-w-[150px]">
             <h4 className="font-semibold">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>

@@ -54,7 +54,7 @@ export const PricingTeaser = () => {
           </p>
         </div>
 
-        <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto overflow-x-auto pb-4 snap-x snap-mandatory md:overflow-visible scrollbar-hide">
+        <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto overflow-x-auto overflow-y-hidden pb-4 snap-x snap-mandatory md:overflow-visible scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
           {plans.map((plan, index) => (
             <Card
               key={index}
