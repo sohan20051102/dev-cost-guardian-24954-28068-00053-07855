@@ -20,7 +20,7 @@ export const Footer = () => {
         </div>
 
         {/* Links - horizontal on mobile, grid on desktop */}
-        <div className="flex gap-8 overflow-x-auto pb-4 mb-8 md:pb-0 md:mb-8 md:grid md:grid-cols-4 md:gap-8">
+        <div className="grid grid-cols-3 gap-4 mb-8 md:grid-cols-4 md:gap-8">
           {/* Brand - desktop only */}
           <div className="hidden md:block space-y-4">
             <div className="flex items-center gap-2">
@@ -35,9 +35,9 @@ export const Footer = () => {
           </div>
 
           {/* Product */}
-          <div className="space-y-3 md:space-y-4 min-w-[140px] flex-shrink-0">
-            <h4 className="font-semibold">Product</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+          <div className="space-y-2 md:space-y-4">
+            <h4 className="font-semibold text-sm md:text-base">Product</h4>
+            <ul className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-muted-foreground">
               <li>
                 <a href="#features" className="hover:text-foreground transition-smooth">
                   Features
@@ -62,9 +62,9 @@ export const Footer = () => {
           </div>
 
           {/* Company */}
-          <div className="space-y-3 md:space-y-4 min-w-[140px] flex-shrink-0">
-            <h4 className="font-semibold">Company</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+          <div className="space-y-2 md:space-y-4">
+            <h4 className="font-semibold text-sm md:text-base">Company</h4>
+            <ul className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-muted-foreground">
               <li>
                 <a href="#about" className="hover:text-foreground transition-smooth">
                   About
@@ -89,9 +89,9 @@ export const Footer = () => {
           </div>
 
           {/* Legal */}
-          <div className="space-y-3 md:space-y-4 min-w-[140px] flex-shrink-0">
-            <h4 className="font-semibold">Legal</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+          <div className="space-y-2 md:space-y-4">
+            <h4 className="font-semibold text-sm md:text-base">Legal</h4>
+            <ul className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-muted-foreground">
               <li>
                 <a href="#" className="hover:text-foreground transition-smooth">
                   Privacy
