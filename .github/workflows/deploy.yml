@@ -1,0 +1,59 @@
+name: Deploy to Cloud Run
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [deploy]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: |
+        if [ -f package.json ]; then
+          npm ci
+        fi
+    - name: Build React app
+      run: |
+        npm run build
+    - name: Authenticate to Google Cloud
+      uses: google-github-actions/auth@v2
+      with:
+        credentials_json: ${{ secrets.GCP_SA_KEY }}
+        
+    - name: Set up Cloud SDK
+      uses: google-github-actions/setup-gcloud@v2
+      
+    - name: Configure Docker
+      run: gcloud auth configure-docker
+      
+    - name: Build and push Docker image
+      run: |
+        IMAGE_NAME="gcr.io/devyntra-500e4/${{ github.event.repository.name }}:${{ github.sha }}"
+        docker build -t $IMAGE_NAME .
+        docker push $IMAGE_NAME
+        
+    - name: Deploy to Cloud Run
+      run: |
+        gcloud run deploy ${{ github.event.repository.name }} \
+          --image gcr.io/devyntra-500e4/${{ github.event.repository.name }}:${{ github.sha }} \
+          --platform managed \
+          --region us-central1 \
+          --allow-unauthenticated \
+          --port 8080
+          
+    - name: Notify DevYntra
+      run: |
+        curl -X POST "${{ secrets.DEVYNTRA_WEBHOOK_URL }}" \
+          -H "Content-Type: application/json" \
+          -d '{"workflow": "deploy", "conclusion": "${{ job.status }}", "repository": "${{ github.repository }}"}'
